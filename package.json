@@ -1,8 +1,8 @@
 {
-    "name": "8novels-formatter",
-    "displayName": "8novels-formatter",
-    "description": "日本語の小説向けの整形機能を提供する、Visual Studio Codeの機能拡張です。",
-    "version": "0.1.2",
+    "name": "formatnovel",
+    "displayName": "Format Novel",
+    "description": "小説のルールに基づき文書を整形する、Visual Studio Codeの機能拡張です。",
+    "version": "0.1.5",
     "publisher": "8amjp",
     "engines": {
         "vscode": "^1.22.0"
@@ -25,15 +25,15 @@
         "keybindings": [
             {
                 "command": "extension.formatNovel",
-                "key": "alt+shift+/",
-                "mac": "option+shift+/",
+                "key": "shift+alt+/",
+                "mac": "shift+option+/",
                 "when": "editorTextFocus"
             }
         ]
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/8amjp/8novels-formatter.git"
+        "url": "https://github.com/8amjp/vsce-formatnovel.git"
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",

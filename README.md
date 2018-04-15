@@ -6,7 +6,7 @@
 
 ## Usage
 
-コマンドパレットを開いて(<kbd><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></kbd>)「Format Novel」と入力するか、  
+コマンドパレットを開いて(<kbd><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></kbd>)「`Format Novel`」と入力するか、  
 <kbd><kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>/</kbd></kbd>とショートカットを入力すると、下記のルールに基づき文書をフォーマットします。
 
 (1) 行頭に全角スペースを挿入します。ただし、下記と一致する行を除きます。

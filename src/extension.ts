@@ -1,7 +1,7 @@
 'use strict';
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-import { window, commands, ExtensionContext, TextEditor, Position, Range } from 'vscode';
+import { window, commands, ExtensionContext, TextEditor, Position } from 'vscode';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -29,35 +29,39 @@ export function activate(context: ExtensionContext) {
 
 // 全角の感嘆符(！)、疑問符(？)のあとに全角スペースを挿入
 function insertAfter(editor: TextEditor): Promise<boolean> {
-	return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         editor.edit((editBuilder) => {
-            let document = editor.document;
-            let text = document.getText();
-            let range = new Range(document.positionAt(0), document.positionAt(text.length));
-            text = text.replace(/([？！](?![\s？！」』]))/g, '$1　');
-            editBuilder.replace(range, text);
+            const regEx = /([？！](?![\s？！」』]))/g;
+            const document = editor.document;
+            const text = document.getText();
+            let match;
+            while (match = regEx.exec(text)) {
+                editBuilder.insert(document.positionAt(match.index + 1), "　");
+            }
         }).then(success => {
             resolve();
         });
-	});
+    });
 }
 
 // 行頭に全角スペースを挿入
 function indent(editor: TextEditor): Promise<boolean> {
-	return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         editor.edit((editBuilder) => {
-            let lineCount = editor.document.lineCount;
+            const regEx = /^[「『#\s]/;
+            const document = editor.document;
+            const lineCount = document.lineCount;
             let line;
             for (let i = 0; i < lineCount; i++) {
-                line = editor.document.lineAt(i).text;
-                if (!/^[「『#\s]/.test(line) && line.length > 0) {
+                line = document.lineAt(i).text;
+                if (!regEx.test(line) && line.length > 0) {
                     editBuilder.insert(new Position(i, 0), "　");
                 }
             }
         }).then(success => {
             resolve();
         });
-	});
+    });
 }
 
 // this method is called when your extension is deactivated

@@ -1,7 +1,7 @@
-8novels-formatter
-=================
+VSCE - FormatNovel README
+=========================
 
-日本語の小説向けの整形機能を提供する、Visual Studio Codeの機能拡張です。  
+小説のルールに基づき文書を整形する、Visual Studio Codeの機能拡張です。  
 マイクロソフトが公開している[サンプル](https://github.com/Microsoft/vscode-extension-samples)を参考にしています。
 
 ## Usage
@@ -23,7 +23,7 @@
 
 ## Install
 
-1. '8novels-formatter-x.x.x.vsix' をダウンロードします。
+1. 'formatnovel-x.x.x.vsix' をダウンロードします。
 1. 「拡張機能」サイドバーを表示します。
 1. 「…」アイコンをクリックし、「VSIX からのインストール…」を選択します。
 1. ダウンロードした拡張機能を選択します。

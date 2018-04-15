@@ -34,7 +34,7 @@ function insertAfter(editor: TextEditor): Promise<boolean> {
             let document = editor.document;
             let text = document.getText();
             let range = new Range(document.positionAt(0), document.positionAt(text.length));
-            text = text.replace(/([？！](?![　？！」』]))/g, '$1　');
+            text = text.replace(/([？！](?![\s？！」』]))/g, '$1　');
             editBuilder.replace(range, text);
         }).then(success => {
             resolve();
@@ -50,7 +50,7 @@ function indent(editor: TextEditor): Promise<boolean> {
             let line;
             for (let i = 0; i < lineCount; i++) {
                 line = editor.document.lineAt(i).text;
-                if (!/^[「『#　]/.test(line)) {
+                if (!/^[「『#\s]/.test(line) && line.length > 0) {
                     editBuilder.insert(new Position(i, 0), "　");
                 }
             }

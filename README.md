@@ -2,6 +2,7 @@
 =================
 
 日本語の小説向けの整形機能を提供する、Visual Studio Codeの機能拡張です。  
+マイクロソフトが公開している[サンプル](https://github.com/Microsoft/vscode-extension-samples)を参考にしています。
 
 ## Usage
 

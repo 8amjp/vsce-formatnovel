@@ -2,7 +2,7 @@
     "name": "formatnovel",
     "displayName": "Format Novel",
     "description": "小説のルールに基づき文書を整形する、Visual Studio Codeの機能拡張です。",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "publisher": "8amjp",
     "engines": {
         "vscode": "^1.22.0"

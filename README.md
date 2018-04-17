@@ -6,8 +6,7 @@ VSCE - FormatNovel README
 
 ## Usage
 
-コマンドパレットを開いて(<kbd><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></kbd>)「`Format Novel`」と入力するか、  
-<kbd><kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>/</kbd></kbd>とショートカットを入力すると、下記のルールに基づき文書をフォーマットします。
+`Format Novel` コマンドを実行すると、下記のルールに基づき文書をフォーマットします。
 
 (1) 行頭に全角スペースを挿入します。ただし、下記と一致する行を除きます。
 
@@ -20,3 +19,13 @@ VSCE - FormatNovel README
 
 * 直後が感嘆符(！)、疑問符(？)、鉤括弧(」、』)、半角スペースの場合
 * 既に全角スペースが挿入されている場合
+
+## Command
+
+いずれかの方法でコマンドを実行してください。
+
+* コマンドパレットを開いて(<kbd><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></kbd>) '`Format Novel`' と入力する
+* エディタ内で右クリックし、コンテクストメニューから '`Format Novel`' を選択する
+* <kbd><kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>/</kbd></kbd>とショートカットを入力する
+
+なお、コマンドが有効になるのは、言語モードがMarkdown形式またはプレーンテキスト形式の場合のみです。

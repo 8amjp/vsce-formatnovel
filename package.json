@@ -22,6 +22,19 @@
                 "title": "Format Novel"
             }
         ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "resourceLangId == markdown",
+                    "command": "extension.formatNovel",
+                    "group": "navigation"
+                }, {
+                    "when": "resourceLangId == plaintext",
+                    "command": "extension.formatNovel",
+                    "group": "navigation"
+                }
+            ]
+        },
         "keybindings": [
             {
                 "command": "extension.formatNovel",

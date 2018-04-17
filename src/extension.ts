@@ -2,16 +2,18 @@
 import { window, commands, ExtensionContext, TextEditor, Position } from 'vscode';
 
 export function activate(context: ExtensionContext) {
-
     commands.registerCommand('extension.formatNovel', () => {
         if (window.activeTextEditor) {
             let editor = window.activeTextEditor;
-            // 全角の感嘆符(！)、疑問符(？)のあとに全角スペースを挿入
-            insertAfter(editor)
-            .then(() => {
-                // 行頭に全角スペースを挿入
-                indent(editor);
-            });
+            // Markdownとプレーンテキストの時だけ実行
+            if (editor.document.languageId === "markdown" || editor.document.languageId === "plaintext") {
+                // 全角の感嘆符(！)、疑問符(？)のあとに全角スペースを挿入
+                insertAfter(editor)
+                .then(() => {
+                    // 行頭に全角スペースを挿入
+                    indent(editor);
+                });
+            }
         }
     });
 }
@@ -43,7 +45,7 @@ function indent(editor: TextEditor): Promise<boolean> {
             let line;
             for (let i = 0; i < lineCount; i++) {
                 line = document.lineAt(i).text;
-                if (!regEx.test(line) && line.length > 0) {
+                if (line.length > 0 && !regEx.test(line)) {
                     editBuilder.insert(new Position(i, 0), "　");
                 }
             }

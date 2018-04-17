@@ -34,15 +34,7 @@
                     "group": "navigation"
                 }
             ]
-        },
-        "keybindings": [
-            {
-                "command": "extension.formatNovel",
-                "key": "shift+alt+/",
-                "mac": "shift+option+/",
-                "when": "editorTextFocus"
-            }
-        ]
+        }
     },
     "repository": {
         "type": "git",

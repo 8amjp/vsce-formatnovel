@@ -2,7 +2,7 @@
     "name": "formatnovel",
     "displayName": "Format Novel",
     "description": "小説のルールに基づき文書を整形する、Visual Studio Codeの機能拡張です。",
-    "version": "0.1.6",
+    "version": "0.3.0",
     "publisher": "8amjp",
     "engines": {
         "vscode": "^1.22.0"
@@ -28,7 +28,8 @@
                     "when": "resourceLangId == markdown",
                     "command": "extension.formatNovel",
                     "group": "navigation"
-                }, {
+                },
+                {
                     "when": "resourceLangId == plaintext",
                     "command": "extension.formatNovel",
                     "group": "navigation"
@@ -48,10 +49,10 @@
         "test": "npm run compile && node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "tslint": "^5.8.0",
+        "@types/mocha": "^2.2.42",
         "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6"
     }
 }
